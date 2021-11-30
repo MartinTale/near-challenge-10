@@ -1,0 +1,7 @@
+- Display the date and time someone signed it
+- Deploy the contract on a testnet sub-account
+- Change the styling to make it your own.
+- Deploy the smart contract and the frontend 
+- Restrict a user to only sign the guest book once
+- Add the ability to store and return more than 10 signatures
+- Display “premium” messages in a unique way
