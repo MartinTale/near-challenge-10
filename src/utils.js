@@ -20,31 +20,20 @@ export async function initContract() {
 	// Getting the Account ID. If still unauthorized, it's just empty string
 	window.accountId = window.walletConnection.getAccountId();
 
+	if (window.accountId) {
+		const account = await near.account(window.accountId);
+		window.accountBalance = await account.getAccountBalance();
+	}
+
 	// Initializing our contract APIs by contract name and configuration
 	window.contract = await new Contract(
 		window.walletConnection.account(),
 		nearConfig.contractName,
 		{
 			// View methods are read only. They don't modify the state, but usually return some value.
-			viewMethods: [
-				"viewCandidates",
-				"viewVotes",
-				"viewLogs",
-				"getLeadingCandidate",
-			],
+			viewMethods: ["viewPets", "viewLogs"],
 			// Change methods can modify the state. But you don't receive the returned value when called.
-			changeMethods: [
-				"addCandidate",
-				"vote",
-				"removeCandidate",
-				"removeVote",
-				"addCandidateTrumpMode",
-				"addCandidateHitlerMode",
-				"addCandidateSantaMode",
-				"askCatToReviveCandidate",
-				"vote360NoScopeMode",
-				"startNewElection",
-			],
+			changeMethods: ["donate"],
 			sender: window.walletConnection.account(), // account object to initialize and sign transactions.
 		}
 	);

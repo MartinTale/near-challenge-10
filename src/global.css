@@ -66,10 +66,6 @@ h1 * {
 	text-shadow: 0 0 12px #4d84b9;
 }
 
-h1 span {
-	text-decoration: line-through;
-}
-
 .accountId {
 	font-size: 0.5em;
 	display: block;
@@ -400,8 +396,12 @@ strong {
 }
 
 .sections > div {
-	width: 500px;
+	width: 600px;
 	margin: 0 1rem 2rem 1rem;
+}
+
+.icon {
+	font-size: 3rem;
 }
 
 #new-candidate-button {
@@ -477,7 +477,7 @@ strong {
 	margin-bottom: 1rem;
 	padding-bottom: 1rem;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 }
 
 .candidate:last-child {
@@ -506,20 +506,18 @@ strong {
 	color: #ddd;
 }
 
-.candidate .details span {
-	color: #888;
-}
-
 .candidate button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	margin-top: 0.25rem;
 	padding: 0.35rem;
 	fill: #999;
 	margin-bottom: 0;
+	font-size: 2rem;
+	padding-top: 18px;
 }
 
 .candidate button.vote {
@@ -715,4 +713,8 @@ strong {
 	100% {
 		-webkit-transform: translate(1px, -2px) rotate(-1deg);
 	}
+}
+
+.logged-in-display {
+	display: none;
 }
