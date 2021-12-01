@@ -181,8 +181,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 				}
 			}
 
-			document.getElementById("total-donations").innerText =
-				total.toString();
+			document.getElementById("total-donations").innerText = (
+				Math.round(total * 10000) / 10000
+			).toString();
 
 			updateLogs();
 		} catch (e) {
